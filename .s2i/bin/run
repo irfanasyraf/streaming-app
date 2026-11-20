@@ -1,0 +1,8 @@
+#!/bin/sh
+exec gunicorn \
+  --bind 0.0.0.0:8080 \
+  --worker-class gthread \
+  --workers 2 \
+  --threads 16 \
+  --timeout 0 \
+  app:app
